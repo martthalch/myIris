@@ -48,7 +48,9 @@ def run(input_df):
     
     # return all predictions
     # return json.dumps(pred.tolist())
-    
+    #global inputs_dc, prediction_dc
+    #inputs_dc.collect(input_df)
+    #prediction_dc.collect(pred)
     # return just the first prediction
     return json.dumps(str(pred[0]))
 

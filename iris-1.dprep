@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 40,
+  "id": "45fc9452-6531-4fd4-ac59-97d29a1808a8",
+  "activities": [
+    {
+      "id": "4210d3a1-1e04-458b-8976-d24b41837fd2",
+      "name": "iris",
+      "blocks": [
+        {
+          "id": "f01677bb-48b4-4e9b-8989-0a28f74b7cc1",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./iris-1.dsource",
+              "referencedActivityId": "f799d53b-9c8c-49d8-8cf9-de18d135f84a",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "d67ab5df-ede0-45c2-b163-0222c9db54b3",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Sepal Length",
+            "columnId": "Column1"
+          }
+        },
+        {
+          "id": "1ddb5709-a1d9-42c5-a9d7-23e0e9bad358",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Sepal Width",
+            "columnId": "Column2"
+          }
+        },
+        {
+          "id": "6023b98c-7563-4282-b7c8-c09baee258d5",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Petal Length",
+            "columnId": "Column3"
+          }
+        },
+        {
+          "id": "efabfc6b-f5e2-47d0-abf7-487be6d0dfc5",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Petal Width",
+            "columnId": "Column4"
+          }
+        },
+        {
+          "id": "a05c6c4e-a723-4bf7-be02-8d87354ca581",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Species",
+            "columnId": "Column5"
+          }
+        },
+        {
+          "id": "8d25abee-92f5-4fa0-96cc-f8d06ead249e",
+          "type": "Microsoft.DPrep.FilterStringColumnBlock",
+          "arguments": {
+            "columnId": "Species",
+            "filterResult": 1,
+            "clauseRelationship": 1,
+            "clauses": [
+              {
+                "operator": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "859d2040-85ae-4f2d-bcee-a27ee869ed6d",
+          "type": "Microsoft.DPrep.DeriveColumnByExample",
+          "arguments": {
+            "columnId": "Column",
+            "dsl": "PABOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgBzAHcAaQB0AGMAaAAiACAAcgB1AGwAZQA9ACIAUwBpAG4AZwBsAGUAQgByAGEAbgBjAGgAIgA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAcwB0ACIAIAByAHUAbABlAD0AIgBUAHIAYQBuAHMAZgBvAHIAbQBhAHQAaQBvAG4AIgA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAZQAiACAAcgB1AGwAZQA9ACIAQQB0AG8AbQAiAD4APABMAGUAdABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAGYAIgAgAGkAZAA9ACIATABlAHQAQwBvAGwAdQBtAG4ATgBhAG0AZQAiAD4APABWAGEAcgBpAGEAYgBsAGUAIABzAHkAbQBiAG8AbAA9ACIAYwBvAGwAdQBtAG4ATgBhAG0AZQAiAD4APABMAGkAdABlAHIAYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAaQBkAHgAIgA+ADwAIQBbAEMARABBAFQAQQBbACIAUwBwAGUAYwBpAGUAcwAiAF0AXQA+ADwALwBMAGkAdABlAHIAYQBsAE4AbwBkAGUAPgA8AC8AVgBhAHIAaQBhAGIAbABlAD4APABMAGUAdABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAGwAZQB0AE8AcAB0AGkAbwBuAHMAIgAgAGkAZAA9ACIATABlAHQAWAAiAD4APABWAGEAcgBpAGEAYgBsAGUAIABzAHkAbQBiAG8AbAA9ACIAeAAiAD4APABOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgB2ACIAIAByAHUAbABlAD0AIgBDAGgAbwBvAHMAZQBJAG4AcAB1AHQAIgA+ADwAVgBhAHIAaQBhAGIAbABlAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAdgBzACIAIAAvAD4APABWAGEAcgBpAGEAYgBsAGUATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgBjAG8AbAB1AG0AbgBOAGEAbQBlACIAIAAvAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APAAvAFYAYQByAGkAYQBiAGwAZQA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAYwBvAG4AdgAiACAAcgB1AGwAZQA9ACIAUwB1AGIAUwB0AHIAaQBuAGcAIgA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAUwBTACIAIAByAHUAbABlAD0AIgBTAHUAYgBTAHQAcgAiAD4APABWAGEAcgBpAGEAYgBsAGUATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgB4ACIAIAAvAD4APABOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgBQAFAAIgAgAHIAdQBsAGUAPQAiAFAAbwBzAFAAYQBpAHIAIgA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAcABvAHMAIgAgAHIAdQBsAGUAPQAiAFIAZQBnAGUAeABQAG8AcwBpAHQAaQBvAG4AUgBlAGwAYQB0AGkAdgBlACIAPgA8AFYAYQByAGkAYQBiAGwAZQBOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAHgAIgAgAC8APgA8AE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAHIAZQBnAGUAeABQAGEAaQByACIAIAByAHUAbABlAD0AIgBSAGUAZwBlAHgAUABhAGkAcgAiAD4APABMAGkAdABlAHIAYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAcgAiAD4APABSAGUAZwB1AGwAYQByAEUAeABwAHIAZQBzAHMAaQBvAG4AIAAvAD4APAAvAEwAaQB0AGUAcgBhAGwATgBvAGQAZQA+ADwATABpAHQAZQByAGEAbABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAHIAIgA+ADwAUgBlAGcAdQBsAGEAcgBFAHgAcAByAGUAcwBzAGkAbwBuAD4APABUAG8AawBlAG4AIABuAGEAbQBlAD0AIgBMAG8AdwBlAHIAYwBhAHMAZQAgAHcAbwByAGQAIgAgAHMAYwBvAHIAZQA9ACIAMQAwADMAIgAgAGkAcwBTAHkAbQBiAG8AbAA9ACIAZgBhAGwAcwBlACIAPgA8ACEAWwBDAEQAQQBUAEEAWwBcAHAAewBMAGwAfQArAF0AXQA+ADwALwBUAG8AawBlAG4APgA8AC8AUgBlAGcAdQBsAGEAcgBFAHgAcAByAGUAcwBzAGkAbwBuAD4APAAvAEwAaQB0AGUAcgBhAGwATgBvAGQAZQA+ADwALwBOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQA+ADwATABpAHQAZQByAGEAbABOAG8AZABlACAAcwB5AG0AYgBvAGwAPQAiAGsAIgA+ADwAIQBbAEMARABBAFQAQQBbAC0AMQBdAF0APgA8AC8ATABpAHQAZQByAGEAbABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APABOAG8AbgB0AGUAcgBtAGkAbgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgBwAG8AcwAiACAAcgB1AGwAZQA9ACIAUgBlAGcAZQB4AFAAbwBzAGkAdABpAG8AbgBSAGUAbABhAHQAaQB2AGUAIgA+ADwAVgBhAHIAaQBhAGIAbABlAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAeAAiACAALwA+ADwATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAcgBlAGcAZQB4AFAAYQBpAHIAIgAgAHIAdQBsAGUAPQAiAFIAZQBnAGUAeABQAGEAaQByACIAPgA8AEwAaQB0AGUAcgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgByACIAPgA8AFIAZQBnAHUAbABhAHIARQB4AHAAcgBlAHMAcwBpAG8AbgA+ADwAVABvAGsAZQBuACAAbgBhAG0AZQA9ACIATABvAHcAZQByAGMAYQBzAGUAIAB3AG8AcgBkACIAIABzAGMAbwByAGUAPQAiADEAMAAzACIAIABpAHMAUwB5AG0AYgBvAGwAPQAiAGYAYQBsAHMAZQAiAD4APAAhAFsAQwBEAEEAVABBAFsAXABwAHsATABsAH0AKwBdAF0APgA8AC8AVABvAGsAZQBuAD4APAAvAFIAZQBnAHUAbABhAHIARQB4AHAAcgBlAHMAcwBpAG8AbgA+ADwALwBMAGkAdABlAHIAYQBsAE4AbwBkAGUAPgA8AEwAaQB0AGUAcgBhAGwATgBvAGQAZQAgAHMAeQBtAGIAbwBsAD0AIgByACIAPgA8AFIAZQBnAHUAbABhAHIARQB4AHAAcgBlAHMAcwBpAG8AbgAgAC8APgA8AC8ATABpAHQAZQByAGEAbABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APABMAGkAdABlAHIAYQBsAE4AbwBkAGUAIABzAHkAbQBiAG8AbAA9ACIAawAiAD4APAAhAFsAQwBEAEEAVABBAFsALQAxAF0AXQA+ADwALwBMAGkAdABlAHIAYQBsAE4AbwBkAGUAPgA8AC8ATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAPgA8AC8ATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAPgA8AC8ATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAPgA8AC8ATgBvAG4AdABlAHIAbQBpAG4AYQBsAE4AbwBkAGUAPgA8AC8ATABlAHQATgBvAGQAZQA+ADwALwBMAGUAdABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4APAAvAE4AbwBuAHQAZQByAG0AaQBuAGEAbABOAG8AZABlAD4A",
+            "examples": "{\"0\":{\"row\":0,\"sourceData\":{\"Species\":\"Iris-setosa\"},\"example\":\"setosa\"}}",
+            "priorColumnIds": [
+              "Species"
+            ],
+            "sourceColumnIds": [
+              "Species"
+            ],
+            "outputType": 2,
+            "anchorColumnId": "Species"
+          }
+        },
+        {
+          "id": "25e820a8-c5c8-4a8f-b29f-015e53043dd8",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Clean species",
+            "columnId": "Column"
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "883d5ae1-4a9e-4382-9173-8d16d370585f",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "4210d3a1-1e04-458b-8976-d24b41837fd2",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        },
+        {
+          "id": "09fba671-8351-4f9c-bec1-90176aa3adaf",
+          "type": "Microsoft.DPrep.ValueCountInspector",
+          "arguments": {
+            "columnId": "Species",
+            "numberOfTopValues": 6,
+            "descending": true,
+            "includeNulls": true,
+            "haloEffect": true,
+            "logScale": false
+          },
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "4210d3a1-1e04-458b-8976-d24b41837fd2",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        },
+        {
+          "id": "d3c84c1e-ab9a-4157-8d16-a7637e7dee35",
+          "type": "Microsoft.DPrep.ValueCountInspector",
+          "arguments": {
+            "columnId": "Clean species",
+            "numberOfTopValues": 6,
+            "descending": true,
+            "includeNulls": true,
+            "haloEffect": true,
+            "logScale": false
+          },
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "4210d3a1-1e04-458b-8976-d24b41837fd2",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    },
+    {
+      "id": "fcf97561-5ea7-4024-947e-c161b85d3cf3",
+      "name": "iris",
+      "blocks": [
+        {
+          "id": "d673c2e3-1540-45de-b2f1-cbfb4e2a51e4",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./iris-1.dsource",
+              "referencedActivityId": "f799d53b-9c8c-49d8-8cf9-de18d135f84a",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "7119ed11-ae4a-4c4e-8673-ea769759c895",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "fcf97561-5ea7-4024-947e-c161b85d3cf3",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": false
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

@@ -2,3 +2,5 @@
 .ipynb_checkpoints
 azureml-logs
 __pycache__*.dprep.user
+
+.vscode/settings.json
